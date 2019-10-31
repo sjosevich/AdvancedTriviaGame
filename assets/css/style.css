@@ -1,0 +1,14 @@
+#home-section {
+    background: url(../images/images.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 700px;
+}
+
+.answeres:hover {cursor: pointer; text-decoration:underline; color: blue;}
+
+.images{
+    margin-left: auto;
+    margin-right: auto;
+}
