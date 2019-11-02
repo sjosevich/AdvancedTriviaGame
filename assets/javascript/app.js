@@ -50,14 +50,14 @@ $(document).ready(function(){
 
   function   myCounter(){
   counter -= 1 ;  
-  console.log(counter);
+  
   document.getElementById('counting').innerHTML= "Time Remaining: " + counter + " seconds"
   
   if (counter < 1) {
     counter= 0;
     stopCounter();
   }
-  console.log("paso el if de la linea 56" + myFlag1 + " -" +counter)
+ 
   if (counter === 0 && myFlag1=== false) {
     $("#1").hide();
     $("#pizza").show();
@@ -227,7 +227,9 @@ $("#Start").on("click", function(){
       $(".startTimer").show();
       $("#counting").show();
       $("#1").show();
-      
+      correct = 0;
+      incorrect = 0; 
+      unanswered = 0;
       myVar = setInterval(myCounter,1000); 
    
   });  
@@ -249,7 +251,7 @@ $("#Start").on("click", function(){
       correct = 0;
       incorrect = 0; 
       unanswered = 0;
-      stopCounter()
+     // stopCounter()
       myFlag1 = false;
       myFlag2 = false;
       myFlag3 = false;
