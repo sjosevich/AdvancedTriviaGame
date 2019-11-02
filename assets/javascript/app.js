@@ -50,13 +50,14 @@ $(document).ready(function(){
 
   function   myCounter(){
   counter -= 1 ;  
+  console.log(counter);
   document.getElementById('counting').innerHTML= "Time Remaining: " + counter + " seconds"
   
   if (counter < 1) {
     counter= 0;
     stopCounter();
   }
-  
+  console.log("paso el if de la linea 56" + myFlag1 + " -" +counter)
   if (counter === 0 && myFlag1=== false) {
     $("#1").hide();
     $("#pizza").show();
@@ -65,7 +66,7 @@ $(document).ready(function(){
     //stopCounter();
     counter= 20;
     $("#counting").hide();
-    myVar = setInterval(myCounter,200); 
+    myVar = setInterval(myCounter,150); 
     if (flagAnswere1 === false){unanswered += 1;}
       
   }
@@ -86,7 +87,7 @@ $(document).ready(function(){
     counter= 20;
     $("#counting").hide();
     if (flagAnswere2 === false){unanswered += 1;}
-    myVar = setInterval(myCounter,200);    
+    myVar = setInterval(myCounter,150);    
   }
   if (counter === 0 && myFlag4=== false) {
     $("#image2").hide();
@@ -105,7 +106,7 @@ $(document).ready(function(){
     counter= 20;
     $("#counting").hide();
     if (flagAnswere3 === false){unanswered += 1;}
-    myVar = setInterval(myCounter,200);    
+    myVar = setInterval(myCounter,150);    
   }
   if (counter === 0 && myFlag6=== false) {
     $("#image3").hide();
@@ -124,7 +125,7 @@ $(document).ready(function(){
     counter= 20;
     $("#counting").hide();
     if (flagAnswere4 === false){unanswered += 1;}
-    myVar = setInterval(myCounter,200);    
+    myVar = setInterval(myCounter,150);    
   } 
   if (counter === 0 && myFlag8=== false) {
     myFlag8 = true;
@@ -133,6 +134,7 @@ $(document).ready(function(){
     $("#allDone").show();
     $("#Done").show();
     counter= 20;
+    stopCounter()
     document.getElementById('wins').innerHTML= "Correct Answers: " + correct ;
     document.getElementById('losses').innerHTML= "Incorrect Answers: " + incorrect ;
     document.getElementById('unanswered').innerHTML= "Unanswered: " + unanswered ;
@@ -167,7 +169,7 @@ function showImage(answere){
     myVar = setInterval(myCounter,1);
   }
   
-  //stopCounter()
+  
   if (answere === "answere6"){
     correct += 1;
     $("#2").hide();
@@ -223,19 +225,9 @@ $("#Start").on("click", function(){
 
     $(".btn").hide();
       $(".startTimer").show();
+      $("#counting").show();
       $("#1").show();
-      var myFlag1 = false;
-      var myFlag2 = false;
-      var myFlag3 = false;
-      var myFlag4 = false;
-      var myFlag5 = false;
-      var myFlag6 = false;
-      var myFlag7 = false;
-      var myFlag8 = false;
-      var flagAnswere1 = false;
-      var flagAnswere2 = false;
-      var flagAnswere3 = false;
-      var flagAnswere4 = false;
+      
       myVar = setInterval(myCounter,1000); 
    
   });  
@@ -254,9 +246,22 @@ $("#Start").on("click", function(){
   $("#Start").show();
   // $('.trivial').show();
  
-   var correct = 0;
-   var incorrect = 0; 
-   var unanswered = 0;
+      correct = 0;
+      incorrect = 0; 
+      unanswered = 0;
+      stopCounter()
+      myFlag1 = false;
+      myFlag2 = false;
+      myFlag3 = false;
+      myFlag4 = false;
+      myFlag5 = false;
+      myFlag6 = false;
+      myFlag7 = false;
+      myFlag8 = false;
+      flagAnswere1 = false;
+      flagAnswere2 = false;
+      flagAnswere3 = false;
+      flagAnswere4 = false;
 
  });
     
